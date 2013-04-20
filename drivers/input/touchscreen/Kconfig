@@ -140,6 +140,9 @@ config TOUCHSCREEN_GT8XX
                 help
                   goodix touch max y resolution
 
+config TOUCHSCREEN_CT36X
+	tristate "CT36X based touchscreens"
+
 config TOUCHSCREEN_GT801PLUS_819_8105_8110
         tristate "Goodix touch screen gt801plus_819_8105_8110 support for rockchip based platform"
         help
@@ -990,7 +993,7 @@ config TOUCHSCREEN_NAS
 
 config LAIBAO_TS
 	tristate "LAIBAO touchscreen"
-	depends on I2C2_RK29
+	depends on I2C2_RK29 || I2C2_RK30
 	help
 	  RK29 LAIBAO touchscreen
 
@@ -1060,7 +1063,7 @@ config TOUCHSCREEN_ZET6221
         
 config TOUCHSCREEN_FT5406
 	tristate "FT5406 based touchscreens: FT5406 Interface"
-	depends on I2C2_RK29
+	depends on I2C2_RK29 || I2C2_RK30
 	help
 	  say Y here if you have a touchscreen interface using the FT5406
 	  controller,and your board-specific initialization code includes that
